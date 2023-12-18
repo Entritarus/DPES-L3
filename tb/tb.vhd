@@ -19,7 +19,6 @@ architecture RTL of tb is
  
 	signal clk : sl := '0';
 	signal rst : sl := '1';
-	signal en : sl := '1';
 
   signal o_port_a : slv (8-1 downto 0) := (others => '0');
   signal o_port_b : slv (8-1 downto 0) := (others => '0');
@@ -31,7 +30,6 @@ begin
 		port map(
 			clk => clk,
 			rst => rst,
-			en => en,
 
       o_port_a => o_port_a,
       o_port_b => o_port_b
@@ -44,7 +42,7 @@ begin
     while test_suite loop
 
       if run("Full_coverage") then
-        wait for 100 us;
+        wait for 500 us;
       end if;
 
     end loop;

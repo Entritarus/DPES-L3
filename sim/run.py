@@ -8,6 +8,7 @@ prj.add_osvvm()
 lab_lib = prj.add_library("lab_lib")
 
 lab_lib.add_source_files("../src/traffic_splitter.vhd")
+lab_lib.add_source_files("../src/crc.vhd")
 lab_lib.add_source_files("../tb/tb.vhd")
 lab_lib.add_source_files("../pkg/util_pkg.vhd")
 

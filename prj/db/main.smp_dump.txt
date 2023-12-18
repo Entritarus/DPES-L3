@@ -1,0 +1,20 @@
+
+State Machine - |traffic_splitter|ll_state_reg
+Name ll_state_reg.s_send_crc ll_state_reg.s_send_data ll_state_reg.s_send_len ll_state_reg.s_send_src_mac ll_state_reg.s_send_dst_mac ll_state_reg.s_send_preamble ll_state_reg.s_idle 
+ll_state_reg.s_idle 0 0 0 0 0 0 0 
+ll_state_reg.s_send_preamble 0 0 0 0 0 1 1 
+ll_state_reg.s_send_dst_mac 0 0 0 0 1 0 1 
+ll_state_reg.s_send_src_mac 0 0 0 1 0 0 1 
+ll_state_reg.s_send_len 0 0 1 0 0 0 1 
+ll_state_reg.s_send_data 0 1 0 0 0 0 1 
+ll_state_reg.s_send_crc 1 0 0 0 0 0 1 
+
+State Machine - |traffic_splitter|state_reg
+Name state_reg.s_get_crc state_reg.s_read_data state_reg.s_read_len state_reg.s_read_src_mac state_reg.s_read_dst_mac state_reg.s_detect_preamble state_reg.s_idle 
+state_reg.s_idle 0 0 0 0 0 0 0 
+state_reg.s_detect_preamble 0 0 0 0 0 1 1 
+state_reg.s_read_dst_mac 0 0 0 0 1 0 1 
+state_reg.s_read_src_mac 0 0 0 1 0 0 1 
+state_reg.s_read_len 0 0 1 0 0 0 1 
+state_reg.s_read_data 0 1 0 0 0 0 1 
+state_reg.s_get_crc 1 0 0 0 0 0 1 

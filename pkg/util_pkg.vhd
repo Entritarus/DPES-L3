@@ -8,7 +8,8 @@ package util_pkg is
 	subtype slv is std_logic_vector;
 	type aslv is array(integer range <>) of slv;
 
-  type state_t is (s_idle, s_detect_preamble, s_read_dst_mac, s_read_src_mac, s_read_len, s_read_data, s_compute_crc);
+  type state_t is (s_idle, s_detect_preamble, s_read_dst_mac, s_read_src_mac, s_read_len, s_read_data, s_get_crc);
+  type ll_state_t is (s_idle, s_send_preamble, s_send_dst_mac, s_send_src_mac, s_send_len, s_send_data, s_send_crc);
   type ROM is array (natural range <>) of std_logic_vector(7 downto 0);
 	function log2c(n : integer) return integer;
 
